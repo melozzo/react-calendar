@@ -1,0 +1,14 @@
+
+
+.nav ul{
+    margin: 20px 0px;
+    display:flex;
+    list-style-type: none;
+    justify-content: space-evenly;
+    font-size:23px;
+    font-weight:bold;
+  }
+
+.nav li {
+    width: 160px;
+}
