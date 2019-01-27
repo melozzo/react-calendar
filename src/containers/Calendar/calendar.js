@@ -148,25 +148,27 @@ export default class Calendar extends Component {
         this.setState( {editedReminder:reminder})
     };
 
-    saveReminderHandler = ( )=> {
-      let copy = this.state.monthOfDays.slice();
-      let day = this.state.editedDayIndex
+    saveReminderHandler = () => {
       let item = this.state.editedItemIndex;
-      let newReminder = {text:"",time:"",importance:""}
-      if( item ){
-        copy[day].events[item] = this.state.editedReminder;
+      let master = this.state.calendarDays.slice();
+      let masterIndex = this.state.calendarIndex + this.state.editedDayIndex;
+      let newReminder = {text:"",time:"",importance:""};
+
+      if( item !== null  ){
+       
+        master[masterIndex].events[item]= this.state.editedReminder;
       }
       else {
-    
-        copy[day].events.push(this.state.editedReminder)
-        let sortedReminders = copy[day].events.sort( (a,b)=> {
+       
+        master[masterIndex].events.push(this.state.editedReminder);
+        // let sortedReminders = copy[day].events.sort( (a,b)=> {
                         
-            return a.time - b.time }
-             )
-        copy[day].events = sortedReminders;
+        //     return a.time - b.time }
+        //      )
+        // copy[day].events = sortedReminders;
       }
        
-      this.setState( {monthOfDays: copy,  editedReminder: newReminder, isEditing: false, editedDayIndex: null, editedItemIndex: null});
+      this.setState( {calendarDays: master,  editedReminder: newReminder, isEditing: false, editedDayIndex: null, editedItemIndex: null});
     }
 
     render () {
@@ -205,7 +207,7 @@ export default class Calendar extends Component {
                             <Editor  
                                     Reminder={this.state.editedReminder}
                                     onChange={this.changeHandler}
-                                    onSaveReminder = {this.saveReminderHandler} />
+                                    onSaveReminder = { ()=> { this.saveReminderHandler() } }/>
                         </Modal>
                         <Nav 
                                 next={ ()=>{this.onNextMonth() } }
