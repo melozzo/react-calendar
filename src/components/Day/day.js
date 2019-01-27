@@ -4,8 +4,13 @@ import Reminder from '../Reminder/reminder'
 
 const Day= (props) => {
 
+    let  colorClass;
+
+    
+    
+
     let eventList = props.events.map(( event,i )=> {
-        return (<div>
+        return (<div >
                   <Reminder key={i} text={event.text} time={event.time} importance={event.importance}></Reminder>
                   <div >
                   <button

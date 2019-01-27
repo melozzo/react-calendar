@@ -11,13 +11,14 @@ export default class Editor extends Component {
         return ( <div className="editor">
                     
                             <label>Reminder </label>       
-                                        <input  name="content" value={this.props.Reminder.text} onChange={ (event)=>{this.props.onChange(event,'text')} }></input>
+                                        <input required maxLength="30" name="content" value={this.props.Reminder.text} onChange={ (event)=>{this.props.onChange(event,'text')} }></input>
                             <label>Time</label>   
-                                            <input type="time" name="time" value={this.props.Reminder.time} onChange={ (event)=>{this.props.onChange(event,'time')} }></input>
+                                            <input required type="time" name="time" value={this.props.Reminder.time} onChange={ (event)=>{this.props.onChange(event,'time')} }></input>
                             
                     
                             <label>Importance</label>      
-                                            <select name="importance" value={this.props.Reminder.importance} onChange={ (event)=>{this.props.onChange(event,'importance')} }>
+                                            <select required name="importance" value={this.props.Reminder.importance} onChange={ (event)=>{this.props.onChange(event,'importance')} }>
+                                            <option  value="None">None Selected</option>
                                                 <option  value="Red">Red</option>
                                                 <option value="Green">Green</option>
                                                 <option value="Yellow">Yellow</option>

@@ -4,8 +4,21 @@ import  './reminder.css';
 
 const Reminder = (props) => {
 
+        let colorClass;
+        switch(props.importance){
+                case "Red":
+                colorClass = "bgRed";
+                break;
+                case "Green":
+                colorClass = "bgGreen";
+                break;
+                case("Yellow"):
+                colorClass = "bgYellow";
+                break;
+            }
+        
     return (
-        <div>
+        <div className={colorClass}>
            
                 <div className="remindertime">
                         {props.time} 

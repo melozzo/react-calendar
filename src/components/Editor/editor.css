@@ -1,14 +1,14 @@
 
 .editor {
     margin: 20px 70px;
-    width: 400px;
+    width: 500px;
     text-align: left;
   }
   
   .editor input, select {
   display: block;
   margin-left: 15px;
-  width: 30em;
+  width: 200px;
   }
   
   .editor label {
