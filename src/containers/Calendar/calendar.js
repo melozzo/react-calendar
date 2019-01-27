@@ -154,20 +154,22 @@ export default class Calendar extends Component {
       let masterIndex = this.state.calendarIndex + this.state.editedDayIndex;
       let newReminder = {text:"",time:"",importance:""};
 
-      if( item !== null  ){
-       
+      if( item !== null  ){  
         master[masterIndex].events[item]= this.state.editedReminder;
       }
       else {
-       
         master[masterIndex].events.push(this.state.editedReminder);
-        // let sortedReminders = copy[day].events.sort( (a,b)=> {
-                        
-        //     return a.time - b.time }
-        //      )
-        // copy[day].events = sortedReminders;
       }
-       
+
+      let copy = master[masterIndex].events.slice();     
+      let sortedReminders = copy.sort( (a,b)=> {
+          let atime = a.time.split(":")
+          let aNum = parseInt(atime[0]) * 60 + parseInt(atime[1]) ;
+          let btime = b.time.split(":")
+          let bNum = parseInt(btime[0]) * 60 + parseInt(btime[1]) ;
+          return aNum - bNum}
+          )
+      master[masterIndex].events = sortedReminders
       this.setState( {calendarDays: master,  editedReminder: newReminder, isEditing: false, editedDayIndex: null, editedItemIndex: null});
     }
 
