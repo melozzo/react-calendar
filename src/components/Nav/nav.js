@@ -5,9 +5,9 @@ const MonthName  =(props) => {
         return (
            <p className="prevnext">
                 
-                    <a href="#" onClick = { props.previous} >{'<< previous'}</a>
+                    <button onClick = { props.previous} >{'<< previous'}</button>
                     <span style={{fontSize:'40px'}}>{props.month}</span>
-                    <a href="#" onClick={props.next}>{'next >>'}</a>
+                    <button onClick={props.next}>{'next >>'}</button>
                 
 
                 </p>

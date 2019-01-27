@@ -4,6 +4,7 @@ import Day from './../../components/Day/day';
 import Modal from './../../components/Modal/modal'
 import  Editor  from './../../components/Editor/editor'
 import MonthName from './../../components/Nav/nav'
+import './calendar.css'
 
 
 export default class Calendar extends Component {

@@ -1,5 +1,27 @@
 
-
+ 
+.prevnext button{
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  margin: 2px;
+  font-family: inherit;
+  font-size:18px;
+ 
+  /* invisible border (will be colored on hover/focus) */
+  border: solid 1px transparent;
+  border-radius: 4px;
+  padding: 0.5em 1em;
+  color: #ffffff;
+  background-color: #6e9477;
+ 
+ }
+  
+ .prevnext button:hover {
+  color: #6e9477;
+  border-color: currentColor;
+  background-color: white;
+}
 
 .prevnext {
   margin:0;

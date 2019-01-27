@@ -1,20 +1,30 @@
  
+.noMargin {
+    margin:0;
+    padding: 0;
+    border: none;
+}
+
+.remindertime {
+    border: none;
+    font-weight: bold;
+    text-align: left;
+    margin: 0px;
+    padding-left: 2px;
+    box-sizing: border-box;
+   
+}
 .remindertext {   
-    display: block;
+    padding-left: 2px;
     font-size: 16px;
     text-align:left;
     word-wrap: break-word;
     margin: 0px;
-    padding: 2px;
-    box-sizing: border-box;
+  border: none;
+  line-height: 96%;
 }
 
-.remindertime {
-    font-weight: bold;
-    text-align: left;
-    margin: 0px;
-    padding: 0px;
-}
+
 
 .bgRed {
     background-color: #e96f6f

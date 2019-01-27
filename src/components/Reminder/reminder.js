@@ -18,7 +18,7 @@ const Reminder = (props) => {
             }
         
     return (
-        <div className={colorClass}>
+        <p style={{margin:'0px', textAlign: 'center'}} className={colorClass }>
            
                 <div className="remindertime">
                         {props.time} 
@@ -26,8 +26,12 @@ const Reminder = (props) => {
                 <div className="remindertext">
                         {props.text }
                 </div>
+                <button 
+                            onClick={()=>props.onEdit(props.dayIndex, props.itemIndex)}>edit</button>
+                <button
+                            onClick={()=>props.onDelete(props.dayIndex, props.itemIndex)}>delete</button>
               
-        </div>
+        </p>
         
     )
 }

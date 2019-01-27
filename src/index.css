@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-font-family: 'Amiri', serif;
+  
   /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif; */
@@ -14,21 +14,3 @@ code {
     monospace;
 }
 
-
-.beige{
-  background-color: #d3beb4;
-}
-
-.calendar table {
-  
-  width:1120px;
-  height:1420px;
-}
-.calendar td{
- width:160px;
- height: 130px;
-  word-wrap: break-word;
-  border-style:solid;
-  border-width: 1px;
-  vertical-align: top;
-}

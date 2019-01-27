@@ -35,7 +35,7 @@ export default class Editor extends Component {
                           
                                            
                         </form>   
-                        <div >
+                        <div style={{textAlign: 'center'}}>
                             <button 
                               onClick={ () => {this.props.onSaveReminder(this.props.Reminder)}}>SAVE EDIT</button>
 
