@@ -3,7 +3,7 @@ import Moment from 'moment';
 import Day from './../../components/Day/day';
 import Modal from './../../components/Modal/modal'
 import  Editor  from './../../components/Editor/editor'
-import Nav from './../../components/Nav/nav'
+import MonthName from './../../components/Nav/nav'
 
 
 export default class Calendar extends Component {
@@ -204,17 +204,17 @@ export default class Calendar extends Component {
             })
       
         return (
-                    <div>
-                        <Modal show={this.state.isEditing} >
+                    <div >
+                         <Modal show={this.state.isEditing} >
                             <Editor  
                                     Reminder={this.state.editedReminder}
                                     onChange={this.changeHandler}
                                     onSaveReminder = { ()=> { this.saveReminderHandler() } }/>
-                        </Modal>
-                        <Nav 
+                        </Modal> 
+                          <MonthName
                                 next={ ()=>{this.onNextMonth() } }
                                 previous={ ()=> {this.onLastMonth() } }
-                                month={this.state.today.format('MMMM YYYY')} />
+                                month={this.state.today.format('MMMM YYYY')} />  
                    
                         <table className="calendar">
                                 <tbody >

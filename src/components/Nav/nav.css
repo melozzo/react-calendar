@@ -1,7 +1,11 @@
 
+.nav {
+    margin:0px;
+    border:0px;
 
-.nav ul{
-    margin: 20px 0px;
+}
+.prevnext ul{
+  
     display:flex;
     list-style-type: none;
     justify-content: space-evenly;
@@ -9,6 +13,6 @@
     font-weight:bold;
   }
 
-.nav li {
+.prevnext li {
     width: 160px;
 }

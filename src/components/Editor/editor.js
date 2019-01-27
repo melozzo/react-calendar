@@ -9,11 +9,14 @@ export default class Editor extends Component {
 
     render() {
         return ( <div className="editor">
-                    
+                    <form>
                             <label>Reminder </label>       
-                                        <input required maxLength="30" name="content" value={this.props.Reminder.text} onChange={ (event)=>{this.props.onChange(event,'text')} }></input>
+                                        <input required maxLength="30" name="content" placeholder={"something to remember"}
+                                        value={this.props.Reminder.text} onChange={ (event)=>{this.props.onChange(event,'text')} }></input>
                             <label>Time</label>   
-                                            <input required type="time" name="time" value={this.props.Reminder.time} onChange={ (event)=>{this.props.onChange(event,'time')} }></input>
+                                            <input   type="time" name="time" value={this.props.Reminder.time}
+                                            placeholder={"12:00"}
+                                             onChange={ (event)=>{this.props.onChange(event,'time')} }></input>
                             
                     
                             <label>Importance</label>      
@@ -25,7 +28,7 @@ export default class Editor extends Component {
                                             </select>
                                     
                                             <button onClick={ () => {this.props.onSaveReminder(this.props.Reminder)}}>SAVE EDIT</button>
-                               
+                        </form>      
                     </div>
                  );
     }

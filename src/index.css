@@ -15,13 +15,19 @@ code {
 }
 
 
+.beige{
+  background-color: #d3beb4;
+}
 
-
+.calendar table {
+  
+  width:1120px;
+  height:1420px;
+}
 .calendar td{
-  height:150px;
-  max-height:150px;
-  width: 225px;
-  max-width: 225px;
+ width:160px;
+ height: 130px;
+  word-wrap: break-word;
   border-style:solid;
   border-width: 1px;
   vertical-align: top;

@@ -1,8 +1,9 @@
  
-.remindertext {   display: block;
+.remindertext {   
+    display: block;
     font-size: 16px;
     text-align:left;
-    overflow-wrap: break-word;
+    word-wrap: break-word;
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;

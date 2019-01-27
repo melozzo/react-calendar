@@ -11,13 +11,13 @@ const Day= (props) => {
 
     let eventList = props.events.map(( event,i )=> {
         return (<div >
-                  <Reminder key={i} text={event.text} time={event.time} importance={event.importance}></Reminder>
-                  <div >
-                  <button
-                      onClick={()=>props.onEditReminder(props.dayIndex, i)}>edit</button>
-                  <button
-                      onClick={()=>props.onDeleteReminder(props.dayIndex, i)}>delete</button>
-              </div>
+                        <Reminder key={i} text={event.text} time={event.time} importance={event.importance}></Reminder>
+                        <div >
+                        <button
+                            onClick={()=>props.onEditReminder(props.dayIndex, i)}>edit</button>
+                        <button
+                            onClick={()=>props.onDeleteReminder(props.dayIndex, i)}>delete</button>
+                    </div>
               </div>
                 )
         });

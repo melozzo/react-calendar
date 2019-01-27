@@ -9,8 +9,8 @@ class App extends Component {
   render() {
     return (
       
-        <div className="App">
-            <Route  path="/" exact component={Calendar}/>
+        <div className="App beige">
+            <Calendar></Calendar>
            
         </div>
     

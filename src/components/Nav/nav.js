@@ -1,20 +1,20 @@
 import React from 'react';
 import './nav.css'
 
-const Nav  =(props) => {
+const MonthName  =(props) => {
         return (
-            <div className = "nav">
+           <div className="prevnext">
                 <ul>
                     <li><a href="#" onClick = { props.previous} >{'<< previous'}</a></li>
                     <li><span style={{fontSize:'40px'}}>{props.month}</span></li>
                     <li><a href="#" onClick={props.next}>{'next >>'}</a></li>
                 </ul>
 
-
+                </div>
                
-            </div>
+           
         );
 
     }
 
-    export default Nav
+    export default MonthName

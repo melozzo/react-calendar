@@ -6,8 +6,11 @@
 
  
 .reminderList  {
-
- display:block;
+  height: 120px;
+  width: 150px;
+ overflow-y: auto;
+  word-wrap: break-word;
+  display:block;
   margin-top: 10px;
    padding:0px 4px;
   
