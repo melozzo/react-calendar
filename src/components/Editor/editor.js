@@ -9,26 +9,37 @@ export default class Editor extends Component {
 
     render() {
         return ( <div className="editor">
-                    <form>
-                            <label>Reminder </label>       
+                    <form >
+                            <label>Reminder </label> 
+                            <div>     
                                         <input required maxLength="30" name="content" placeholder={"something to remember"}
                                         value={this.props.Reminder.text} onChange={ (event)=>{this.props.onChange(event,'text')} }></input>
-                            <label>Time</label>   
-                                            <input   type="time" name="time" value={this.props.Reminder.time}
-                                            placeholder={"12:00"}
+                            </div> 
+                            <label>Time</label>
+                            <div>   
+                                            <input  required type="time" name="time" value={this.props.Reminder.time}
+                                           
                                              onChange={ (event)=>{this.props.onChange(event,'time')} }></input>
-                            
+                            </div>
                     
-                            <label>Importance</label>      
-                                            <select required name="importance" value={this.props.Reminder.importance} onChange={ (event)=>{this.props.onChange(event,'importance')} }>
+                            <label>Importance</label> 
+                            <div>    
+                                            <select required name="importance" value={this.props.Reminder.importance} 
+                                            onChange={ (event)=>{this.props.onChange(event,'importance')} }>
                                             <option  value="None">None Selected</option>
                                                 <option  value="Red">Red</option>
                                                 <option value="Green">Green</option>
                                                 <option value="Yellow">Yellow</option>
                                             </select>
-                                    
-                                            <button onClick={ () => {this.props.onSaveReminder(this.props.Reminder)}}>SAVE EDIT</button>
-                        </form>      
+                            </div> 
+                          
+                                           
+                        </form>   
+                        <div >
+                            <button 
+                              onClick={ () => {this.props.onSaveReminder(this.props.Reminder)}}>SAVE EDIT</button>
+
+                            </div>   
                     </div>
                  );
     }

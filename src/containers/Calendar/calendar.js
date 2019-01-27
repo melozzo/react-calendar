@@ -86,11 +86,6 @@ export default class Calendar extends Component {
             this.setState( {monthOfDays : this.state.calendarDays.slice(startIndex, startIndex+42) , today: firstDay, calendarIndex: startIndex})
 
         }
-
-
-       
-
-
     }
 
     onLastMonth = () => {
@@ -122,7 +117,7 @@ export default class Calendar extends Component {
     }
 
     addReminderHandler = ( dayArrayIndex )=> {
-        let newReminder = {text:"",time:null,importance:null}
+        let newReminder = {text:"reminder",time:"12:00",importance:"Red"}
         this.setState( {isEditing: true, editedDayIndex:dayArrayIndex, editedReminder : newReminder})
     }
 

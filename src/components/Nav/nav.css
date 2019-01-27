@@ -1,18 +1,12 @@
 
-.nav {
-    margin:0px;
-    border:0px;
 
-}
-.prevnext ul{
-  
+
+.prevnext {
+  margin:0;
+  padding: 25px;
     display:flex;
-    list-style-type: none;
+   
     justify-content: space-evenly;
     font-size:23px;
     font-weight:bold;
   }
-
-.prevnext li {
-    width: 160px;
-}

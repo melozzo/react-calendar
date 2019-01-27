@@ -3,14 +3,14 @@ import './nav.css'
 
 const MonthName  =(props) => {
         return (
-           <div className="prevnext">
-                <ul>
-                    <li><a href="#" onClick = { props.previous} >{'<< previous'}</a></li>
-                    <li><span style={{fontSize:'40px'}}>{props.month}</span></li>
-                    <li><a href="#" onClick={props.next}>{'next >>'}</a></li>
-                </ul>
+           <p className="prevnext">
+                
+                    <a href="#" onClick = { props.previous} >{'<< previous'}</a>
+                    <span style={{fontSize:'40px'}}>{props.month}</span>
+                    <a href="#" onClick={props.next}>{'next >>'}</a>
+                
 
-                </div>
+                </p>
                
            
         );

@@ -1,24 +1,36 @@
 
 .editor {
-    margin: 20px 70px;
-    width: 500px;
-    text-align: left;
+
+   background-color: #89bea8;
+    width: 100%;
+    
+  }
+
+  .editor form {
+    margin: 0 auto;
+    width:300px;
+   
+    display:flex;
+    flex-direction:column;
+    align-items: flex-start;
   }
   
   .editor input, select {
-  display: block;
-  margin-left: 15px;
-  width: 200px;
+    margin-left:25px;
+    margin-bottom:10px;
+    padding:6px;
+    width:220px;
   }
   
   .editor label {
-    margin: 3px 0px;
-    display: block;
+   padding:8px;
     font-weight: bold;
+   
   }
   
   .editor button {
-    display: block;
-    margin:20px auto;
+    padding:12px;
+    margin: 25px auto;
+    
   }
   
