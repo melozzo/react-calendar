@@ -9,10 +9,10 @@ class App extends Component {
   render() {
     return (
       
-        <div className="App beige">
+        <div style={{display:'flex'}} >
             <Calendar></Calendar>
            
-        </div>
+            </div>
     
     );
   }

@@ -5,9 +5,11 @@ import Modal from './../../components/Modal/modal'
 import  Editor  from './../../components/Editor/editor'
 import MonthName from './../../components/Nav/nav'
 import './calendar.css'
+import { connect } from 'react-redux';
+import * as actionCreators from './../../store/actionCreators'
 
 
-export default class Calendar extends Component {
+class Calendar extends Component {
 
     constructor(props) {
         super(props); 
@@ -58,6 +60,9 @@ export default class Calendar extends Component {
     }
 
     componentDidMount() {
+
+        this.props.getEvents();
+
        let days =   this.hydrateMonth( Moment() )
        this.setState({calendarDays: days, monthOfDays:days, calendarDayIndex: 0 })
     }
@@ -200,7 +205,7 @@ export default class Calendar extends Component {
             })
       
         return (
-                    <div >
+                    <div style={{marginLeft:'auto', marginRight:'auto'}}>
                          <Modal show={this.state.isEditing} >
                             <Editor  
                                     Reminder={this.state.editedReminder}
@@ -226,29 +231,20 @@ export default class Calendar extends Component {
 }
 
 
-// const queryParams =[];
-// queryParams.push(encodeURIComponent('text') + '=' + encodeURIComponent(this.state.Reminder.text))
-// queryParams.push(encodeURIComponent('time') + '=' + encodeURIComponent(this.state.Reminder.time))
-// queryParams.push(encodeURIComponent('importance') + '=' + encodeURIComponent(this.state.Reminder.importance))
-// let queryString = queryParams.join('&')
+const mapPropsToState = state => {
+    return {
+        Events: state.Activities
+    }
+}
+   
 
-// this.props.history.push({
-//    pathname:"/",
-//    search: '?' + queryString
-// } );
+const mapPropsToActions  =  dispatch  => {
+    return {
+        getEvents: () => dispatch( actionCreators.fetchActivities()  )
+    }
+    
+}
 
 
+export default ( connect(mapPropsToState, mapPropsToActions ) )( Calendar );
 
-
-
-    //     const queryParams =[];
-    //     queryParams.push(encodeURIComponent('text') + '=' + encodeURIComponent(reminderToEdit.text))
-    //     queryParams.push(encodeURIComponent('time') + '=' + encodeURIComponent(reminderToEdit.time))
-    //     queryParams.push(encodeURIComponent('importance') + '=' + encodeURIComponent(reminderToEdit.importance))
-    //     let queryString = queryParams.join('&')
-
-    //    this.props.history.push({
-    //        pathname:"/edit",
-    //        search: '?' + queryString
-    //    } );
-       
