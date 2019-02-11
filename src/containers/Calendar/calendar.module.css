@@ -1,0 +1,31 @@
+/* 
+.calendar table {
+  
+    width:1120px;
+    height:1420px;
+  }
+  .calendar td{
+   width:160px;
+   height: 130px;
+    word-wrap: break-word;
+    border-style:solid;
+    border-width: 1px;
+    vertical-align: top;
+  }
+   */
+
+   .calendar {
+
+    width:100%;
+
+   }
+
+   .calendar td {
+     padding:0px;
+     width: 14.29%;
+    height:'6em';
+     border-style:solid;
+    border-width: 1px;
+    vertical-align: top;
+    overflow:auto;
+   }

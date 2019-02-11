@@ -1,0 +1,52 @@
+ 
+.noMargin {
+    margin:0;
+    padding: 0;
+    border: none;
+}
+
+.remindertime {
+    border: none;
+    font-weight: bold;
+    text-align: left;
+    margin: 0px;
+    padding-left: 2px;
+    box-sizing: border-box;
+   
+}
+.remindertext {   
+    padding-left: 2px;
+    font-size: 16px;
+    text-align:left;
+    word-wrap: break-word;
+    margin: 0px;
+  border: none;
+  line-height: 96%;
+}
+
+
+
+.bgRed {
+    background-color: #e96f6f
+}
+
+.bgYellow { 
+    background-color: #e2d956
+}
+
+.bgGreen {
+    background-color: #b3f0c4
+}
+
+
+.reminderList  {
+    height: 120px;
+    width: 150px;
+   overflow-y: scroll;
+    word-wrap: break-word;
+    display:block;
+    margin-top: 10px;
+     padding:0px 4px;
+    
+    }
+  

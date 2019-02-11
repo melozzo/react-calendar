@@ -1,5 +1,5 @@
-import React from 'react';
-import  './reminder.css';
+import React  from 'react';
+import styles from  './reminder.module.css';
 
 
 const Reminder = (props) => {
@@ -7,31 +7,31 @@ const Reminder = (props) => {
         let colorClass;
         switch(props.importance){
                 case "Red":
-                colorClass = "bgRed";
+                colorClass = styles.bgRed;
                 break;
                 case "Green":
-                colorClass = "bgGreen";
+                colorClass = styles.bgGreen;
                 break;
                 case("Yellow"):
-                colorClass = "bgYellow";
+                colorClass = styles.bgYellow;
                 break;
             }
         
     return (
-        <p style={{margin:'0px', textAlign: 'center'}} className={colorClass }>
+        <div style={{textAlign:"center"}} className={[colorClass ]}>
            
-                <div className="remindertime">
+                <div className={styles.remindertime}>
                         {props.time} 
                 </div> 
-                <div className="remindertext">
+                <div className={styles.remindertext}>
                         {props.text }
                 </div>
                 <button 
-                            onClick={()=>props.onEdit(props.dayIndex, props.itemIndex)}>edit</button>
+                            onClick={()=>props.onEditReminder(props.dayIndex, props.itemIndex)}>edit</button>
                 <button
-                            onClick={()=>props.onDelete(props.dayIndex, props.itemIndex)}>delete</button>
+                            onClick={()=>props.onDeleteReminder(props.dayIndex, props.itemIndex)}>delete</button>
               
-        </p>
+        </div>
         
     )
 }

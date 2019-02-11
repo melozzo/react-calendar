@@ -1,31 +1,26 @@
 import React, { Component } from 'react';
 import './editor.css'
 
-export default class Editor extends Component {
-    
-    constructor(props){
-        super(props)
-    }
+const Editor = (props) => {
 
-    render() {
         return ( <div className="editor">
                     <form >
                             <label>Reminder </label> 
                             <div>     
                                         <input required maxLength="30" name="content" placeholder={"something to remember"}
-                                        value={this.props.Reminder.text} onChange={ (event)=>{this.props.onChange(event,'text')} }></input>
+                                        value={props.Reminder.text} onChange={ (event)=>{props.onChange(event,'text')} }></input>
                             </div> 
                             <label>Time</label>
                             <div>   
-                                            <input  required type="time" name="time" value={this.props.Reminder.time}
+                                            <input  required type="time" name="time" value={props.Reminder.time}
                                            
-                                             onChange={ (event)=>{this.props.onChange(event,'time')} }></input>
+                                             onChange={ (event)=>{props.onChange(event,'time')} }></input>
                             </div>
                     
                             <label>Importance</label> 
                             <div>    
-                                            <select required name="importance" value={this.props.Reminder.importance} 
-                                            onChange={ (event)=>{this.props.onChange(event,'importance')} }>
+                                            <select required name="importance" value={props.Reminder.importance} 
+                                            onChange={ (event)=>{props.onChange(event,'importance')} }>
                                             <option  value="None">None Selected</option>
                                                 <option  value="Red">Red</option>
                                                 <option value="Green">Green</option>
@@ -37,7 +32,7 @@ export default class Editor extends Component {
                         </form>   
                         <div style={{textAlign: 'center'}}>
                             <button 
-                              onClick={ () => {this.props.onSaveReminder(this.props.Reminder)}}>SAVE EDIT</button>
+                              onClick={ () => {props.onSaveReminder(props.Reminder)}}>SAVE EDIT</button>
 
                             </div>   
                     </div>
@@ -45,17 +40,17 @@ export default class Editor extends Component {
     }
 
 
-}
+export default Editor;
 
 
    
 
     // componentDidMount() {
-    //     const q = new URLSearchParams(this.props.location.search);
+    //     const q = new URLSearchParams(props.location.search);
     //     const reminder = {};
     //     for( let param of q.entries()) {
     //         reminder[param[0]] = param[1]
     //     }
 
-    //     this.setState ( { Reminder: reminder} )
+    //     setState ( { Reminder: reminder} )
     // }

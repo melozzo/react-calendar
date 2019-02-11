@@ -16,7 +16,7 @@ export const fetchActivities = ( ) => {
         Axios.get("http://localhost/TraveloggiaServices/api/SiteList/22282")
         .then( response => {
             console.log(response);
-            dispatch ( activitiesFetched( response.data ));
+            dispatch( activitiesFetched( response.data ));
         });
 
     }

@@ -1,20 +1,17 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment  } from 'react';
 import Moment from 'moment';
 import Day from './../../components/Day/day';
 import Modal from './../../components/Modal/modal'
 import  Editor  from './../../components/Editor/editor'
 import MonthName from './../../components/Nav/nav'
-import './calendar.css'
+import styles from  './calendar.module.css'
 import { connect } from 'react-redux';
 import * as actionCreators from './../../store/actionCreators'
 
 
 class Calendar extends Component {
 
-    constructor(props) {
-        super(props); 
-
-        this.state = {
+        state = {
             today: Moment(),
             calendarDays: [],
             monthOfDays: [],
@@ -30,10 +27,8 @@ class Calendar extends Component {
             editedItemIndex:null
         }
 
-       
-      }
+    
 
-  
     hydrateMonth = ( today )=> {
         let month = today.month();
         let year = today.year();
@@ -176,7 +171,6 @@ class Calendar extends Component {
 
     render () {
        
-
         let header = ( <tr>
             <th>Sunday</th>
             <th>Monday</th>
@@ -190,40 +184,43 @@ class Calendar extends Component {
             let  month = weeks.map( i => {
                 let start = i * 7;
                 let weekdays = this.state.monthOfDays.slice( start,start+7).map( (day, i )=> {
+               
 
-                    return day.dayno !== null? (<td><Day 
-                                                                            key={start + i}
-                                                                            dayNo ={day.dayno} 
-                                                                            dayIndex={start+i}
-                                                                            events = {day.events}
-                                                                            onEditReminder={this.editReminderHandler}
-                                                                            onAddReminder={this.addReminderHandler}
-                                                                            onDeleteReminder={this.deleteReminderHandler}></Day></td>): (<td></td>)
+                   return day.dayno !== null? (
+                         <td><Day 
+                                        key={start + i}
+                                        dayNo ={day.dayno} 
+                                        dayIndex={start+i}
+                                        events = {day.events}
+                                        onEditReminder={this.editReminderHandler}
+                                        onAddReminder={this.addReminderHandler}
+                                        onDeleteReminder={this.deleteReminderHandler}></Day></td>): (<td></td>)
                 })
-                return  (<tr>{weekdays}</tr>);
+                return  (<tr key={Math.random()}>{weekdays}</tr>);
 
             })
       
-        return (
-                    <div style={{marginLeft:'auto', marginRight:'auto'}}>
+        return (   
+                   <Fragment>
+               
                          <Modal show={this.state.isEditing} >
                             <Editor  
                                     Reminder={this.state.editedReminder}
                                     onChange={this.changeHandler}
                                     onSaveReminder = { ()=> { this.saveReminderHandler() } }/>
                         </Modal> 
-                          <MonthName
+                         <MonthName
                                 next={ ()=>{this.onNextMonth() } }
                                 previous={ ()=> {this.onLastMonth() } }
                                 month={this.state.today.format('MMMM YYYY')} />  
                    
-                        <table className="calendar">
+                        <table id="calendarTable" className={styles.calendar}>
                                 <tbody >
                                         {header}
                                         { month}
                                 </tbody>
                         </table>
-                    </div>
+                    </Fragment> 
                 );
     }
 
@@ -231,7 +228,7 @@ class Calendar extends Component {
 }
 
 
-const mapPropsToState = state => {
+const mapStateToProps = state => {
     return {
         Events: state.Activities
     }
@@ -246,5 +243,5 @@ const mapPropsToActions  =  dispatch  => {
 }
 
 
-export default ( connect(mapPropsToState, mapPropsToActions ) )( Calendar );
+export default ( connect(mapStateToProps, mapPropsToActions ) )( Calendar );
 

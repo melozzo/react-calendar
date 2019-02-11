@@ -1,21 +1,18 @@
 import * as actionTypes from './action-types'
 
 const initialState = {
-    Activities: []
+    Activities: ["mounse"]
 }
 
 const reducer = ( state = initialState , action) => {
 
     switch( action.type) {
         case actionTypes.ACTIVITIES_FETCHED :
-            return { ...state,
-            Activies: state.Activities.concat( action.data )}
+            return { Activities: state.Activities.concat( action.data)}
 
 
+        default:  return state;
     }
-
-
-    return state;
 }
 
 export default reducer
