@@ -7,14 +7,16 @@ const Reminder = (props) => {
         let colorClass;
         switch(props.importance){
                 case "Red":
-                colorClass = styles.bgRed;
-                break;
+                        colorClass = styles.bgRed;
+                        break;
                 case "Green":
-                colorClass = styles.bgGreen;
-                break;
-                case("Yellow"):
-                colorClass = styles.bgYellow;
-                break;
+                        colorClass = styles.bgGreen;
+                        break;
+                case "Yellow":
+                        colorClass = styles.bgYellow;
+                        break;
+                default :
+                        colorClass = styles.bgYellow;
             }
         
     return (
@@ -27,9 +29,9 @@ const Reminder = (props) => {
                         {props.text }
                 </div>
                 <button 
-                            onClick={()=>props.onEditReminder(props.dayIndex, props.itemIndex)}>edit</button>
+                            onClick={props.onEditReminder}>edit</button>
                 <button
-                            onClick={()=>props.onDeleteReminder(props.dayIndex, props.itemIndex)}>delete</button>
+                            onClick={props.onDeleteReminder}>delete</button>
               
         </div>
         

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './editor.css'
+import './editor.css';
+import Moment from 'moment';
 
 const Editor = (props) => {
 
@@ -8,13 +9,13 @@ const Editor = (props) => {
                             <label>Reminder </label> 
                             <div>     
                                         <input required maxLength="30" name="content" placeholder={"something to remember"}
-                                        value={props.Reminder.text} onChange={ (event)=>{props.onChange(event,'text')} }></input>
+                                        value={props.Reminder.Name} onChange={ (event)=>{props.onChange(event,'Name')} }></input>
                             </div> 
                             <label>Time</label>
                             <div>   
-                                            <input  required type="time" name="time" value={props.Reminder.time}
+                                            <input  required type="time" name="time" value={Moment(props.Reminder.Arrival).format('HH:mm')}
                                            
-                                             onChange={ (event)=>{props.onChange(event,'time')} }></input>
+                                             onChange={ (event)=>{props.onChangeTime(event, props.Reminder.Arrival)} }></input> 
                             </div>
                     
                             <label>Importance</label> 

@@ -8,8 +8,8 @@ const activitiesFetched = ( data ) => {
         type: actionTypes.ACTIVITIES_FETCHED,
         data: data
     }
-
 }
+
 
 export const fetchActivities = ( ) => {
     return ( dispatch, getState ) => {
@@ -20,7 +20,4 @@ export const fetchActivities = ( ) => {
         });
 
     }
-   
-
-    
 }
