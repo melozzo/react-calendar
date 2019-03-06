@@ -136,20 +136,13 @@ class Calendar extends Component {
 
         let dateString =  (month + 1 ).toString() + "/1/"+ year;
         let firstDay = Moment(dateString);
-        let lastDay = firstDay.daysInMonth();
-        let startIndex = this.state.calendarIndex + 42;
 
-        if( this.state.calendarDays.length <= startIndex) {
-            let nextMonth = this.hydrateMonth(firstDay);
-            let thirtyfiveMore = this.state.calendarDays.concat( nextMonth)
-       
-            this.setState( {calendarDays: thirtyfiveMore, monthOfDays : nextMonth , today: firstDay, calendarIndex: startIndex} )
-        }
-        else {
-            this.setState( {monthOfDays : this.state.calendarDays.slice(startIndex, startIndex+42) , today: firstDay, calendarIndex: startIndex})
+        this.setState({today: firstDay, month: firstDay.month()});
 
-        }
     }
+
+
+
 
     onLastMonth = () => {
         let month = this.state.today.month();
@@ -163,20 +156,9 @@ class Calendar extends Component {
 
         let dateString =  (month + 1 ).toString() + "/1/"+ year;
         let firstDay = Moment(dateString);
-        let startIndex = this.state.calendarIndex - 42;
 
-        if(  startIndex < 0  ) {
-            let previousMonth = this.hydrateMonth(firstDay);
-            let thirtyfiveMore = previousMonth.concat(this.state.calendarDays)
-            startIndex = 0;
-            this.setState( { calendarDays: thirtyfiveMore, monthOfDays : previousMonth , today: firstDay, calendarIndex: 0} )
-        }
-        else {
-           
-            this.setState( {monthOfDays : this.state.calendarDays.slice(startIndex, startIndex + 42) , today: firstDay, calendarIndex: startIndex})
-
-        }
-
+        this.setState({today: firstDay, month: firstDay.month()});
+        
     }
   
   
