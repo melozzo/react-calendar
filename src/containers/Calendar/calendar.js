@@ -111,6 +111,7 @@ class Calendar extends Component {
         this.setState( {editedReminder:clonedReminder})
     };
 
+
     saveReminderHandler = () => {
         if ( this.state.isUpdate === true) {
             this.props.updateEvent(this.state.editedReminder);
@@ -119,7 +120,7 @@ class Calendar extends Component {
         else {
             this.props.addEvent(this.state.editedReminder)
         }
-        this.setState({showEditor: false})
+        this.setState({showEditor: false, editedReminder: { SiteID: "", Name: "", Arrival:"", importance: ""}})
     }
 
 
@@ -140,8 +141,6 @@ class Calendar extends Component {
         this.setState({today: firstDay, month: firstDay.month()});
 
     }
-
-
 
 
     onLastMonth = () => {
@@ -221,7 +220,7 @@ class Calendar extends Component {
                 );
         }       
         else 
-            return ( <div>you suck</div>);
+            return ( <div></div>);
 
     }
 
